@@ -1,55 +1,53 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const portfolioSection = document.getElementById('portfolio');
-    const portfolioRow = portfolioSection.querySelector('.row');
+    const portfolioRow = document.querySelector('#chaqueta .row');
 
-    // Datos de ejemplo para las obras de arte
-    const obrasDeArte = [
+    // Datos de ejemplo para las chaquetas
+    const chaquetas = [
         { 
             imagen: 'https://via.placeholder.com/400x300',
-            titulo: 'Obra de Arte 1',
-            descripcion: 'Esta es una obra de arte increíble.'
+            titulo: 'Chaqueta 1',
+            descripcion: 'Esta es una chaqueta increíble.'
         },
         { 
             imagen: 'https://via.placeholder.com/400x300',
-            titulo: 'Obra de Arte 2',
-            descripcion: 'Otra obra de arte asombrosa.'
+            titulo: 'Chaqueta 2',
+            descripcion: 'Otra chaqueta asombrosa.'
         },
         { 
             imagen: 'https://via.placeholder.com/400x300',
-            titulo: 'Obra de Arte 3',
-            descripcion: 'Una obra de arte única y hermosa.'
+            titulo: 'Chaqueta 3',
+            descripcion: 'Una chaqueta única y hermosa.'
         }
     ];
 
-    // Función para crear una tarjeta de obra de arte
-    function crearTarjetaObra(obra) {
+    // Función para crear una tarjeta de chaqueta
+    function crearTarjetaChaqueta(chaqueta) {
         const card = document.createElement('div');
         card.classList.add('col-md-4');
         card.innerHTML = `
             <div class="card">
-                <img src="${obra.imagen}" class="card-img-top" alt="...">
+                <img src="${chaqueta.imagen}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">${obra.titulo}</h5>
-                    <p class="card-text">${obra.descripcion}</p>
+                    <h5 class="card-title">${chaqueta.titulo}</h5>
+                    <p class="card-text">${chaqueta.descripcion}</p>
                 </div>
             </div>
         `;
         return card;
     }
 
-    // Crear y agregar tarjetas para cada obra de arte al portafolio
-    obrasDeArte.forEach(obra => {
-        const card = crearTarjetaObra(obra);
+    // Crear y agregar tarjetas para cada chaqueta al portafolio
+    chaquetas.forEach(chaqueta => {
+        const card = crearTarjetaChaqueta(chaqueta);
         portfolioRow.appendChild(card);
     });
 
-    // Función para cerrar el menú automáticamente después de hacer clic en un enlace en dispositivos móviles
-    const navLinks = document.querySelectorAll('.navbar-nav>li>a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            navbarCollapse.classList.remove('show');
-        });
+    // Función para toggle del menú en dispositivos móviles
+    const toggleNavbarButton = document.getElementById('toggleNavbar');
+    const navbarCollapse = document.getElementById('navbarNav');
+
+    toggleNavbarButton.addEventListener('click', function() {
+        navbarCollapse.classList.toggle('show');
     });
 
     // Función para desplazamiento suave al hacer clic en los enlaces del menú

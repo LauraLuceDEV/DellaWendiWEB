@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Artista</title>
+    <title>Portafolio de DellaWendi</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--MENU NAVEGACION-->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">Nombre del Artista</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#">DellaWendi</a>
+                <button class="navbar-toggler" type="button" id="toggleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -23,7 +22,7 @@
                             <a class="nav-link" href="#hero">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">Portafolio</a>
+                            <a class="nav-link" href="#chaqueta">Chaquetas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contacto</a>
@@ -33,38 +32,29 @@
             </div>
         </nav>
     </header>
-    <!--SECCION INICIAL-->
+    <!--Seccion conoce a DellaWendi-->
     <section id="hero" class="d-flex align-items-center">
         <div class="container text-center text-white">
-            <h1>¡Bienvenido al Portafolio de Arte!</h1>
-            <p>Explora las increíbles obras de arte y descubre la creatividad ilimitada.</p>
-            <a href="#portfolio" class="btn btn-primary btn-lg">Ver Portafolio</a>
+            <h1>¡Conoce a DellaWendi!</h1>
+            <p>Explora las increíbles chaquetas y descubre la creatividad ilimitada.</p>
+            <a href="#chaqueta" class="btn btn-primary btn-lg">Mis Chaquetas</a>
         </div>
+        <div class="filtro"></div> <!-- Nuevo div para el filtro -->
     </section>
-    <!--PORTFOLIO-->
-    <section id="portfolio" class="text-center">
+    
+    <section id="chaqueta" class="text-center">
         <div class="container">
-            <h2>Portafolio</h2>
-            <div class="portfolio-content">
-                <!-- Aquí puedes agregar tus obras de arte como tarjetas Bootstrap -->
-                <!-- Ejemplo: -->
-                <!-- <div class="col-md-4">
-                    <div class="card">
-                        <img src="imagen.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Obra de Arte</h5>
-                            <p class="card-text">Descripción de la obra de arte.</p>
-                        </div>
-                    </div>
-                </div> -->
+            <h2>Mis Chaquetas</h2>
+            <div class="row">
+                <!-- Las chaquetas se cargarán aquí -->
             </div>
         </div>
     </section>
-    <!--FOOTER-->
+
     <footer id="contact" class="bg-dark text-white text-center py-5">
         <div class="container">
             <h2>Contacto</h2>
-            <p>¡Contáctame para más información sobre mis obras de arte!</p>
+            <p>¡Contáctame para más información sobre mis chaquetas!</p>
             <div class="social-links mt-4">
                 <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>

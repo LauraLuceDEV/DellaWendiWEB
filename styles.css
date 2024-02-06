@@ -1,35 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-h1 {
-    color: #333;
-}
-
-p {
-    color: #666;
-}
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
 /* Estilos para el hero */
 #hero {
-    background-image: url('https://via.placeholder.com/1500x600');
+    position: relative;
+    background-image: url('src/img/DellaWendianatest.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -39,6 +11,22 @@ button:hover {
     text-align: center;
     color: #fff;
 }
+
+.filtro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Negro con un 50% de opacidad */
+}
+
+.container {
+    position: relative; /* Asegurar que el contenido dentro del contenedor esté en una capa superior */
+    z-index: 1; /* Aumentar el valor de z-index */
+}
+
+
 
 /* Estilos para el footer */
 footer {
@@ -65,7 +53,7 @@ footer {
 }
 
 .navbar-brand:hover, .navbar-nav .nav-link:hover {
-    color: #ffd700;
+    color: #a41bff;
 }
 
 .navbar-toggler {
@@ -82,7 +70,7 @@ footer {
     display: block;
     width: 0;
     height: 2px;
-    background: #ffd700;
+    background: #a41bff;
     transition: width 0.3s;
 }
 

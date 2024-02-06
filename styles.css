@@ -78,3 +78,9 @@ footer {
     width: 100%;
     transition: width 0.3s;
 }
+
+/*Clases */
+a.btn.btn-primary.btn-lg {
+    background-color: #a41bff;
+    border-color: #4e077d;
+}

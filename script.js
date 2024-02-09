@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const portfolioRow = document.querySelector('#chaqueta .row');
+    const portfolioRow = document.querySelector('#portfolioRow');
 
     // Datos de ejemplo para las chaquetas
     const chaquetas = [

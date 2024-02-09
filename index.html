@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#">DellaWendi</a>
                 <button class="navbar-toggler" type="button" id="toggleNavbar">
@@ -18,11 +18,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="#hero">Inicio</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#hero">DellaWendi</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dellawendi">DellaWendi</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#chaqueta">Chaquetas</a>
@@ -35,36 +35,31 @@
             </div>
         </nav>
     </header>
-    <!--Seccion Inicial-->
-    <section id="hero" class="d-flex align-items-center">
+    <!-- Seccion principal de la página donde esta el carrousel de imagenes-->
+    <section id="principal" class="d-flex align-items-center">
         <div class="container text-center text-white">
             <h1>¡Conoce a DellaWendi!</h1>
             <p>Explora las increíbles chaquetas y descubre la creatividad ilimitada.</p>
             <a href="#chaqueta" class="btn btn-primary btn-lg">Mis Chaquetas</a>
         </div>
-        <div class="filtro"></div> <!-- Nuevo div para el filtro -->
+        <div class="filtro"></div>
     </section>
-    <!-- Seccion Conoce a DellaWendi -->
+    <!--/ Seccion Principal-->
+    <!-- Sección conoce a DellaWendi/Autora-->
     <section id="dellawendi">
         <div class="container">
             <div class="row">
                 <!-- Columna para las imágenes -->
                 <div class="col-md-6 autor-photo">
-                    <div class="poster-container">
-                        <div class="photo-style">
-                            <img src="src/img/DellaWendiGarabatoConAlas.jpg" alt="Imagen 1" class="poster">
-                        </div>
-                        <div class="photo-style">
-                            <img src="src/img/DellaWendiPezonFloral.jpg" alt="Imagen 1" class="poster">
-                        </div>
-                        <div class="photo-style">
-                            <img src="src/img/DellaWendiTeNChill.jpg" alt="Imagen 1" class="poster">
+                    <div class="photo-stack">
+                        <div id="photo-container">
+                            <img src="src/img/img-dellawendi.png" id="Dellawendi-photo" alt="Dellawendi" class="poster">
                         </div>
                     </div>
                 </div>
                 <!-- Columna para el contenido de DellaWendi -->
                 <div class="col-md-6 descrip">
-                    <h2>DellaWendi</h2>
+                    <h2>Conoce a DellaWendi</h2>
                     <h5>Un Garabato con Alas</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae convallis urna. Nullam vel gravida odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In ultrices enim ac metus elementum commodo.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae convallis urna. Nullam vel gravida odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In ultrices enim ac metus elementum commodo.</p>
@@ -73,17 +68,13 @@
             </div>
         </div>
     </section>
-    
-    <!--Seccion chaquetas-->
+    <!-- / Sección conoce a DellaWendi/Autora-->
     <section id="chaqueta" class="text-center">
         <div class="container">
             <h2>Mis Chaquetas</h2>
-            <div class="row">
-                <!-- Las chaquetas se cargarán aquí -->
-            </div>
+            <div class="row" id="portfolioRow"></div>
         </div>
     </section>
-
     <footer id="contact" class="bg-dark text-white text-center py-5">
         <div class="container">
             <h2>¡Contáctame!</h2>
@@ -98,8 +89,6 @@
             </div>
         </div>
     </footer>
-
-    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,7 +1,7 @@
 /* Estilos para el menu de navegacion*/
 .navbar {
-    background: linear-gradient(rgba(9, 4, 12, 0.8), rgba(9, 4, 12, 0.8)), url('src/img/denim-bck.png'); /* Capa de color sólido con opacidad combinada con la imagen de fondo */
-    background-blend-mode: overlay; /* Para mezclar la imagen de fondo con el color */
+    background: url('src/img/denim-bck2.png'); /* Capa de color sólido con opacidad combinada con la imagen de fondo */
+    object-fit: fill;
 }
 
 .navbar-brand,
@@ -66,7 +66,7 @@
 }
 
 /* Estilos para la sección dellawendi */
-#dellawendi {
+.oval-bck {
     padding: 100px 0;
     background-color: #c96fd2; /* Color de fondo */
     color: #09040c; /* Color de texto */
@@ -133,5 +133,4 @@ footer {
 /*Clases */
 a.btn.btn-primary.btn-lg {
     background-color: #af7ebc; /* Color de fondo del botón */
-    border-color: #
 }

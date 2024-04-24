@@ -9,57 +9,178 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!--LOADER-->
+    <div id="loader-container" class="slide-fwd-top shadow-drop-center">
+        <img src="src/logo/garabato-completo.png" alt="Cargando..." id="loader">
+    </div>
+    <!--LOADER-->
+    <!--HEADER-->
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container dellawendi-navbar">
-                <a class="navbar-brand" href="#">DellaWendi</a>
+                <a class="navbar-brand" href="https://www.instagram.com/_dellawendi/">
+                    <img src="src/logo/ala-izq-trazo.png" class="dellawendi-logo">
+                    DellaWendi
+                    <img src="src/logo/ala-dch-trazo.png" class="dellawendi-logo">
+                </a>
                 <button class="navbar-toggler" type="button" id="toggleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#dellawendi">DellaWendi</a>
+                            <a class="nav-link" href="https://www.instagram.com/_dellawendi/">DellaWendi</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#chaqueta">Chaquetas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contacto</a>
+                            <a class="nav-link email-icon" href="#contact">Contacto</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    
     <!-- Seccion principal de la página donde esta el carrousel de imagenes-->
-    <section id="principal" class="d-flex align-items-center">
-        <div class="container text-center text-white">
-            <h1>¡Conoce a DellaWendi!</h1>
-            <p>Explora las increíbles chaquetas y descubre la creatividad ilimitada.</p>
-            <a href="#chaqueta" class="btn btn-primary btn-lg">Mis Chaquetas</a>
+    <section id="principal" class="carousel slide d-flex align-items-center" data-ride="carousel">
+        <!-- Indicadores del carrusel -->
+        <ol class="carousel-indicators">
+            <li data-target="#principal" data-slide-to="0" class="active"></li>
+            <li data-target="#principal" data-slide-to="1"></li> <!-- Segundo indicador -->
+            <li data-target="#principal" data-slide-to="2"></li> <!-- Tercer indicador -->
+            <!-- Agrega más indicadores según la cantidad de imágenes -->
+        </ol>
+        
+        <!-- Imágenes del carrusel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="src/img/DellaWendiCarrousel1.jpg" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>¡Conoce los Garabatos de DellaWendi!</h1>
+                    <p>Explora sus garabatos y ayuda a darle una segunda vida a tus prendas</p>
+                    <a href="#chaqueta" class="btn btn-primary btn-lg">Mis Chaquetas</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="src/img/DellaWendiCarrousel2.jpg" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>¡Nuevas Chaquetas!</h1>
+                    <p>Nuevas creaciones disponibles</p>
+                    <a href="#chaqueta" class="btn btn-primary btn-lg">Ver más</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="src/img/DellaWendiCarrousel3.jpg" class="d-block w-100" alt="Slide 3">http://127.0.0.1:5500/#principal
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>La prenda que siempre quisiste</h1>
+                    <p>Si tienes un diseño en mente, este es el momento</p>
+                    <p>Para ti o para quién tú quieras</p>
+                    <a href="#chaqueta" class="btn btn-primary btn-lg">Aprovecha ahora</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="src/img/DellaWendiCarrousel4.jpg" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>¡El límite lo pones tú!</h1>
+                    <p>Y la pintura y los materiales que son limitados...</p>
+                    <a href="#chaqueta" class="btn btn-primary btn-lg">Aprovecha ahora</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="src/img/DellaWendiCarrousel5.jpg" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Reciclar hace bien</h1>
+                    <p>No te pierdas las creaciones propias que también disponemos</p>
+                    <a href="#chaqueta" class="btn btn-primary btn-lg">Ver ahora</a>
+                </div>
+            </div>
+            <!-- Agrega más imágenes según sea necesario -->
         </div>
-        <div class="filtro"></div>
+        
+        <!-- Controles del carrusel -->
+        <a class="carousel-control-prev" href="#principal" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#principal" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
     </section>
+    
     <!--Section Chaquetas-->
     <section id="chaqueta" class="text-center oval-bck">
         <div class="container">
             <h2>Mis Chaquetas</h2>
             <div class="row" id="portfolioRow"></div>
         </div>
+        <!-- Ventana Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Detalles de la Chaqueta</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="modal-image" src="" class="img-fluid" alt="Chaqueta">
+                        <h5 id="modal-title"></h5>
+                        <p id="modal-description"></p>
+                        <span id="modal-available" class="badge badge-success"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!--/ Section Chaquetas-->
-    <!--Footer-->
+    <!--Modal CORREO-->
+    <!-- Modal para el formulario de correo electrónico -->
+<div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="emailModalLabel">Enviar Correo Electrónico</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="emailForm">
+                    <div class="form-group">
+                        <label for="recipientEmail">Para:</label>
+                        <input type="email" class="form-control" id="recipientEmail" placeholder="Correo Electrónico del destinatario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailSubject">Asunto:</label>
+                        <input type="text" class="form-control" id="emailSubject" placeholder="Asunto del correo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailBody">Mensaje:</label>
+                        <textarea class="form-control" id="emailBody" rows="5" placeholder="Escribe tu mensaje aquí" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+   <!--Footer-->
     <footer id="contact" class="bg-dark text-white text-center py-5">
         <div class="container">
             <h2>¡Contáctame!</h2>
             <p>Para más información sobre mis chaquetas!</p>
             <div class="social-links mt-4">
-                <a href="#" class="instagram">
-                    <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/_dellawendi/" class="instagram">
+                    <img src="src/icons/instagram-0.png" alt="Instagram" class="social-icon">
                 </a>
-                <a href="#" class="email">
-                    <i class="fa-solid fa-envelope"></i>
+                <a class="email email-icon">
+                    <img src="src/icons/gmail-0.png" alt="Email" class="social-icon email-icon">
                 </a>
             </div>
         </div>

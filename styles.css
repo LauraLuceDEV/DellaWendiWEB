@@ -1,55 +1,214 @@
-/* Estilos para el menu de navegacion*/
+/*ANIMACION ENTRADA*/
+/* Estilos para el contenedor de la pantalla de carga */
+#loader-container {
+    position: fixed; /* Posición fija para cubrir toda la ventana */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* Color de fondo blanco */
+    z-index: 9999; /* Z-index alto para que se muestre por encima de todo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para la imagen de carga */
+#loader {
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: auto;
+    animation: fadeIn 2s ease-in-out forwards; /* Animación de fadeIn */
+}
+
+/* Definición de la animación fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/**
+ * ----------------------------------------
+ * animation slide-fwd-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-fwd-top {
+    0% {
+      -webkit-transform: translateZ(0) translateY(0);
+              transform: translateZ(0) translateY(0);
+    }
+    100% {
+      -webkit-transform: translateZ(160px) translateY(-100px);
+              transform: translateZ(160px) translateY(-100px);
+    }
+  }
+  @keyframes slide-fwd-top {
+    0% {
+      -webkit-transform: translateZ(0) translateY(0);
+              transform: translateZ(0) translateY(0);
+    }
+    100% {
+      -webkit-transform: translateZ(160px) translateY(-100px);
+              transform: translateZ(160px) translateY(-100px);
+    }
+  }
+  
+  /**
+   * ----------------------------------------
+   * animation shadow-drop-center
+   * ----------------------------------------
+   */
+  @-webkit-keyframes shadow-drop-center {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
+  @keyframes shadow-drop-center {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
+  
+
+
+/*CÓDIGO NORMAL*/
+body {
+    background-image: url('src/img/denim-bck2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-top: 100px; /* Ajusta este valor según tus necesidades */
+}
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+    background-color: transparent;
+    transition: background-image 0.3s ease-in-out;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('src/img/denim-nav-bck.png');
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+}
+
+header:hover::before {
+    opacity: 1;
+}
+
+header:hover {
+    background-image: url('src/img/denim-nav-bck2.png');
+}
+
+.dellawendi-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    filter: invert(100%) brightness(100%);
+}
+
 .navbar {
-    background: url('src/img/denim-bck2.png'); /* Capa de color sólido con opacidad combinada con la imagen de fondo */
-    object-fit: fill;
+    background-color: transparent;
+    background-image: none;
+    transition: background 0.3s;
 }
 
 .navbar-brand,
 .navbar-nav .nav-link {
-    color: #e9b9f2; /* Color de texto */
+    color: #b595ff;
+    font-weight: 500;
 }
 
 .navbar-brand:hover,
 .navbar-nav .nav-link:hover {
-    color: #c96fd2; /* Color de texto al pasar el ratón */
+    color: #c96fd2;
 }
 
 .navbar-toggler {
-    border-color: #e9b9f2; /* Color del botón del menú */
+    border-color: #e9b9f2;
 }
 
 .navbar-toggler-icon {
-    background-color: #e9b9f2; /* Color del icono del botón del menú */
+    background-color: #e9b9f2;
 }
 
-/* Estilos para el efecto hover en el menú */
 .nav-item::after {
     content: '';
     display: block;
     width: 0;
     height: 2px;
-    background: #c96fd2; /* Color del efecto hover */
+    background: #c96fd2;
     transition: width 0.3s;
 }
 
 .nav-item:hover::after {
     width: 100%;
-    transition: width 0.3s;
 }
 
 /*Seccion Principal*/
 #principal {
-    position: relative;
-    background-image: url('src/img/DellaWendiCarrousel1.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #e9b9f2; /* Color de texto */
+    height: calc(100vh - 56px);
+    position: relative;
+    z-index: 0;
 }
+
+#chaqueta {
+    margin-top: 35rem; /* Reducido el margen superior */
+}
+
+
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    height: fit-content;
+    max-width: 600px;
+    max-height: 350px;
+}
+
 
 .filtro {
     position: absolute;
@@ -57,80 +216,44 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Negro con un 50% de opacidad */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .container {
-    position: relative; /* Asegurar que el contenido dentro del contenedor esté en una capa superior */
-    z-index: 1; /* Aumentar el valor de z-index */
+    position: relative;
+    z-index: 1;
 }
 
-/* Estilos para la sección dellawendi */
-.oval-bck {
-    padding: 100px 0;
-    background-color: #c96fd2; /* Color de fondo */
-    color: #09040c; /* Color de texto */
-    border-top-left-radius: 50%; /* Bordes redondeados en la esquina superior izquierda */
-    border-bottom-left-radius: 50%; /* Bordes redondeados en la esquina inferior izquierda */
-    background-position: right; /* Desplazar el fondo hacia la derecha */
-    display: flex; /* Utilizamos flexbox para controlar el diseño */
-    justify-content: center; /* Centrar contenido horizontalmente */
-    align-items: center; /* Centrar contenido verticalmente */
-}
-
-/*DellaWendi Imágen izq*/
-#Dellawendi-photo {
-    max-width: 100%; /* La imagen se ajustará al ancho del contenedor */
-    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-    display: block; /* Para asegurarse de que no haya espacios en blanco debajo de la imagen */
-    margin: 0 auto; /* Centrar la imagen horizontalmente */
-}
-
-/*DellaWendi descripcion dch*/
-.description {
-    padding: 20px;
-    background-color: #ffffff; /* Fondo de la descripción */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-.description h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.description p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-
-
-
-/* Estilos para las tarjetas del portafolio de las chaquetas/items */
 .card {
     margin-bottom: 30px;
     transition: transform 0.3s ease;
-    background-color: #09040c; /* Color de fondo */
-    color: #e9b9f2; /* Color de texto */
-    border: 2px solid #af7ebc; /* Borde */
+    background-color: #430069;
+    color: #e4d8ff;
+    border: 2px solid #af7ebc;
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
-
-/* Estilos para el footer */
 footer {
     padding: 50px 0;
-    background-color: #09040c; /* Color de fondo */
-    color: #c96fd2; /* Color de texto */
+    background-image: url('src/img/denim-nav-bck.png');
+    background-color: #09040c;
+    color: #c96fd2;
 }
 
+.social-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+}
 
-/*Clases */
+/* Cambiar la imagen cuando se hace hover */
+.social-icon:hover {
+    transform: scale(1.1); /* Aumentar el tamaño al 110% */
+}
+
 a.btn.btn-primary.btn-lg {
-    background-color: #af7ebc; /* Color de fondo del botón */
+    background-color: #af7ebc;
 }

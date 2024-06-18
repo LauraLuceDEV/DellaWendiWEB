@@ -183,7 +183,7 @@ header:hover {
     z-index: 0;
 }
 
-#chaqueta {
+#garabato {
     margin-top: 35rem; /* Reducido el margen superior */
 }
 
@@ -256,4 +256,22 @@ footer {
 
 a.btn.btn-primary.btn-lg {
     background-color: #af7ebc;
+}
+
+/*Modal Email*/
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+.modal-body {
+    padding: 20px;
+}
+.form-group label {
+    font-weight: bold;
+}
+.form-group .form-control {
+    border-radius: 5px;
+}
+.form-group .custom-file-label {
+    border-radius: 5px;
 }

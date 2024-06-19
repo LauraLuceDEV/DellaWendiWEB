@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Function to hide the loader and show the main content
+    function hideLoader() {
+        var loaderContainer = document.getElementById("loader-container");
+        var mainContent = document.getElementById("main-content");
+        loaderContainer.style.display = "none";
+        mainContent.style.display = "block";
+    }
+
+    // Set a timeout to simulate loading time
+    setTimeout(hideLoader, 3000); // Adjust the time as needed
+
     // Variables para el formulario
     const garmentTypeOther = document.getElementById('garmentTypeOther');
     const otherDescriptionGroup = document.getElementById('otherDescriptionGroup');
@@ -13,15 +24,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Nuevo script para la sección de "¿TIENES UN GARABATO PROPIO QUE PERSONALIZAR?"
+    const hasGarmentNo = document.getElementById('hasGarmentNo');
+    const noGarmentDescriptionGroup = document.getElementById('noGarmentDescriptionGroup');
+
+    hasGarmentNo.addEventListener('change', function() {
+        if (hasGarmentNo.checked) {
+            noGarmentDescriptionGroup.style.display = 'block';
+        } else {
+            noGarmentDescriptionGroup.style.display = 'none';
+        }
+    });
+
+    const hasGarmentYes = document.getElementById('hasGarmentYes');
+    hasGarmentYes.addEventListener('change', function() {
+        if (hasGarmentYes.checked) {
+            noGarmentDescriptionGroup.style.display = 'none';
+        }
+    });
+
     document.getElementById('referenceImages').addEventListener('change', function() {
         const fileName = Array.from(this.files).map(file => file.name).join(', ');
         this.nextElementSibling.innerText = fileName;
     });
 
+    // Add the EmailJS initialization
+    emailjs.init("YOUR_USER_ID"); // Replace "YOUR_USER_ID" with your EmailJS user ID
+
     document.getElementById('emailForm').addEventListener('submit', function(event) {
         event.preventDefault();
-        displayMessage('Formulario enviado correctamente!', 'success');
+        sendEmail();
     });
+
+    function sendEmail() {
+        const form = document.getElementById('emailForm');
+        const formData = new FormData(form);
+
+        const emailParams = {
+            subject: 'chaqueta',
+            to_email: 'laupicero@gmail.com',
+            hasGarment: formData.get('hasGarment'),
+            noGarmentDescription: formData.get('noGarmentDescription'),
+            garmentType: formData.get('garmentType'),
+            otherDescription: formData.get('otherDescription'),
+            description: formData.get('description')
+        };
+
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                displayMessage('Formulario enviado correctamente!', 'success');
+            }, function(error) {
+                console.log('FAILED...', error);
+                displayMessage('No se pudo enviar su correo', 'error');
+            });
+    }
 
     function displayMessage(message, type) {
         const messageDiv = document.getElementById('form-messages');
@@ -108,11 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
     garabatos.forEach(garabato => {
         const card = crearTarjetaGarabato(garabato);
         portfolioRow.appendChild(card);
-    });
-
-    window.addEventListener("load", function() {
-        document.getElementById("loader-container").style.display = "none";
-        document.body.style.overflow = "auto";
     });
 
     const toggleNavbarButton = document.getElementById('toggleNavbar');

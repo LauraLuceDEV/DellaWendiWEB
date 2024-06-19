@@ -1,26 +1,92 @@
-/*ANIMACION ENTRADA*/
-/* Estilos para el contenedor de la pantalla de carga */
+/* Colors */
+.color-yellow {
+    color: #fcfe03;
+}
+
+.color-orange {
+    color: #fc7e05;
+}
+
+.color-pink {
+    color: #fe349a;
+}
+
+.color-green {
+    color: #99fe00;
+}
+
+.color-blue {
+    color: #4398d8;
+}
+
+.color-primary {
+    color: #14006c;
+}
+
+.color-secondary {
+    color: #002955;
+}
+
+.color-tertiary {
+    color: #c96fd2;
+}
+
+.bck-yellow {
+    background-color: #fcfe03;
+}
+
+.bck-orange {
+    background-color: #fc7e05;
+}
+
+.bck-pink {
+    background-color: #fe349a;
+}
+
+.bck-green {
+    background-color: #99fe00;
+}
+
+.bck-blue {
+    background-color: #4398d8;
+}
+
+.bck-primary {
+    background-color: #14006c;
+}
+
+.bck-secondary {
+    background-color: #002955;
+}
+
+.bck-tertiary {
+    background-color: #c96fd2;
+}
+
+.txt-align-center {
+    text-align: center;
+}
+
+/* Loader Animation */
 #loader-container {
-    position: fixed; /* Posición fija para cubrir toda la ventana */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff; /* Color de fondo blanco */
-    z-index: 9999; /* Z-index alto para que se muestre por encima de todo */
+    background-color: #fff;
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Estilos para la imagen de carga */
 #loader {
-    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    width: 100px;
     height: auto;
-    animation: fadeIn 2s ease-in-out forwards; /* Animación de fadeIn */
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
-/* Definición de la animación fadeIn */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -29,61 +95,52 @@
         opacity: 1;
     }
 }
-/**
- * ----------------------------------------
- * animation slide-fwd-top
- * ----------------------------------------
- */
- @-webkit-keyframes slide-fwd-top {
-    0% {
-      -webkit-transform: translateZ(0) translateY(0);
-              transform: translateZ(0) translateY(0);
-    }
-    100% {
-      -webkit-transform: translateZ(160px) translateY(-100px);
-              transform: translateZ(160px) translateY(-100px);
-    }
-  }
-  @keyframes slide-fwd-top {
-    0% {
-      -webkit-transform: translateZ(0) translateY(0);
-              transform: translateZ(0) translateY(0);
-    }
-    100% {
-      -webkit-transform: translateZ(160px) translateY(-100px);
-              transform: translateZ(160px) translateY(-100px);
-    }
-  }
-  
-  /**
-   * ----------------------------------------
-   * animation shadow-drop-center
-   * ----------------------------------------
-   */
-  @-webkit-keyframes shadow-drop-center {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-    100% {
-      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    }
-  }
-  @keyframes shadow-drop-center {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-    100% {
-      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    }
-  }
-  
 
+@-webkit-keyframes slide-fwd-top {
+    0% {
+        -webkit-transform: translateZ(0) translateY(0);
+        transform: translateZ(0) translateY(0);
+    }
+    100% {
+        -webkit-transform: translateZ(160px) translateY(-100px);
+        transform: translateZ(160px) translateY(-100px);
+    }
+}
 
-/*CÓDIGO NORMAL*/
+@keyframes slide-fwd-top {
+    0% {
+        -webkit-transform: translateZ(0) translateY(0);
+        transform: translateZ(0) translateY(0);
+    }
+    100% {
+        -webkit-transform: translateZ(160px) translateY(-100px);
+        transform: translateZ(160px) translateY(-100px);
+    }
+}
+
+@-webkit-keyframes shadow-drop-center {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+}
+
+@keyframes shadow-drop-center {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+}
+
+/* Main CSS */
 body {
     background-image: url('src/img/denim-bck2.png');
     background-repeat: no-repeat;
@@ -93,7 +150,7 @@ body {
 }
 
 main {
-    padding-top: 100px; /* Ajusta este valor según tus necesidades */
+    padding-top: 100px;
 }
 
 header {
@@ -101,7 +158,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; 
+    z-index: 1000;
     background-color: transparent;
     transition: background-image 0.3s ease-in-out;
 }
@@ -136,14 +193,13 @@ header:hover {
 }
 
 .navbar {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.01);
     background-image: none;
     transition: background 0.3s;
 }
 
 .navbar-brand,
 .navbar-nav .nav-link {
-    color: #b595ff;
     font-weight: 500;
 }
 
@@ -173,7 +229,7 @@ header:hover {
     width: 100%;
 }
 
-/*Seccion Principal*/
+/* Principal Section */
 #principal {
     display: flex;
     justify-content: center;
@@ -184,15 +240,13 @@ header:hover {
 }
 
 #garabato {
-    margin-top: 35rem; /* Reducido el margen superior */
+    margin-top: 35rem;
 }
-
 
 .carousel-item img {
     height: 100%;
     object-fit: cover;
 }
-
 
 .carousel-caption {
     position: absolute;
@@ -208,7 +262,6 @@ header:hover {
     max-width: 600px;
     max-height: 350px;
 }
-
 
 .filtro {
     position: absolute;
@@ -227,9 +280,9 @@ header:hover {
 .card {
     margin-bottom: 30px;
     transition: transform 0.3s ease;
-    background-color: #430069;
-    color: #e4d8ff;
-    border: 2px solid #af7ebc;
+    background-color: #fff;
+    color: #002955;
+    border: 2px solid #14006c;
 }
 
 .card:hover {
@@ -246,32 +299,47 @@ footer {
 .social-icon {
     width: 30px;
     height: 30px;
-    transition: transform 0.3s ease-in-out; /* Transición suave */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Cambiar la imagen cuando se hace hover */
 .social-icon:hover {
-    transform: scale(1.1); /* Aumentar el tamaño al 110% */
+    transform: scale(1.1);
 }
 
 a.btn.btn-primary.btn-lg {
     background-color: #af7ebc;
 }
 
-/*Modal Email*/
+.btn-email-form {
+    width: 75%;
+    color: #fff !important;
+    background-color: #af7ebc !important;
+    border-color: #a676b3 !important;
+}
+
+/* Modal Email */
 .modal-header {
-    background-color: #007bff;
+    background-color: #af7ebc;
     color: white;
 }
+
 .modal-body {
     padding: 20px;
 }
+
 .form-group label {
     font-weight: bold;
 }
+
 .form-group .form-control {
     border-radius: 5px;
 }
+
 .form-group .custom-file-label {
     border-radius: 5px;
+}
+
+.p-form {
+    font-size: 0.75em;
+    font-weight: 300;
 }
